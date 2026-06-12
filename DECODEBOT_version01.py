@@ -8,7 +8,7 @@
 # Instead of writing 50 if-elif-else blocks (slow, messy),
 # we store all our rules in a dictionary.
 # Dictionary lookup is O(1) - instant, no matter how many rules.
-# This is the PROFESSIONAL approach shown in your project brief.
+
 
 responses = {
     # Greetings
@@ -63,30 +63,6 @@ responses = {
     "thank you":            "Anytime! That is what I am here for.",
     "thank you so much":    "My pleasure! Keep up the great work.",
 }
-
-# ============================================================
-# LOGIC EXPLANATION:
-#
-# 1. CONTINUOUS LOOP (while True)
-#    The chatbot keeps running forever until the user types exit.
-#    This is called the "heartbeat" - it never stops listening.
-#
-# 2. INPUT SANITIZATION (.lower().strip())
-#    "Hello " and "HELLO" and "hello" all become "hello"
-#    This makes matching reliable regardless of how user types.
-#
-# 3. KEYWORD MATCHING
-#    We check if any key from our dictionary appears IN the input.
-#    This means "I want to say hello" still matches "hello".
-#    More flexible than exact match only.
-#
-# 4. DICTIONARY LOOKUP (.get())
-#    responses.get(key, fallback) - if key exists return response,
-#    if not return the fallback message. Clean and efficient.
-#
-# 5. EXIT STRATEGY
-#    If user types "exit" or "quit", break out of the loop cleanly.
-# ============================================================
 
 
 def get_response(user_input):
